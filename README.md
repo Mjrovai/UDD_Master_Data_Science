@@ -1,1 +1,1 @@
-# UDD_Master_Data_Science Projects
+# UDD - Projects for Master in Data Science 
