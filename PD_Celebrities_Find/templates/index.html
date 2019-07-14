@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+   <head>
+      <title>FINDING CELEBRITIES</title>
+      <link rel="stylesheet" href='../static/style.css'/>
+   </head>
+ <body>
+    <h1>FINDING CELEBRITIES</h1>
+ 	<hr>    
+	<form action="{{ url_for('query') }}" method = "POST" enctype = "multipart/form-data">
+        <input type = "file" name = "file" />
+        <input type = "submit"/>
+    </form>
+    <hr>
+     <h3> This celebrity name is {{name}} </h3>
+     <h3> Confidence: {{confidence}}%</h3>
+    <br><br>
+   
+    {% if image %}
+      <img src="{{ image }}"  alt="Image Placeholder" width="90%">
+    {% else %}
+      <h3>no image for whatever reason</h3>
+    {% endif %}
+	
+     <p> @2019 UDD - MDS18 - PD</p>
+   </body>
+</html>

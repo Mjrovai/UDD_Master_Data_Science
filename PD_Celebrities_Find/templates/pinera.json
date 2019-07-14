@@ -1,0 +1,40 @@
+{
+	"categories": [
+		{
+			"name": "people_",
+			"score": 0.9453125,
+			"detail": {
+				"celebrities": [
+					{
+						"name": "Sebastian Pinera",
+						"confidence": 0.9999083280563354,
+						"faceRectangle": {
+							"left": 234,
+							"top": 249,
+							"width": 213,
+							"height": 213
+						}
+					}
+				]
+			}
+		}
+	],
+	"faces": [
+		{
+			"age": 65,
+			"gender": "Male",
+			"faceRectangle": {
+				"left": 234,
+				"top": 249,
+				"width": 213,
+				"height": 213
+			}
+		}
+	],
+	"requestId": "bd6d59ee-e2a6-4505-b80f-30c12a2b80ba",
+	"metadata": {
+		"width": 800,
+		"height": 1035,
+		"format": "Jpeg"
+	}
+}
