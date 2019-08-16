@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <link rel="icon" href="../static/uddspotbot_icon.png">
+        <meta charset="UTF-8">
+        <title>UDD SpotBot</title>
+        <link rel="stylesheet" href='../static/style.css'/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <style>
+            body {
+                background: #1D5292;
+                color: white;
+                text-align: center;
+                font-family: Arial;
+            }
+            #g1 {
+                width: 300px;
+                height: 240px;
+                display: inline-block;
+                margin: 1em;
+            }
+        </style>
+    </head>
+
+    <script src="../static/raphael-2.1.4.min.js"></script>
+    <script src="../static/justgage.js"></script>
+    <script>
+		var g1;
+		document.addEventListener("DOMContentLoaded", function(event) {
+			g1 = new JustGage({
+				id: "g1",
+				value: {{ prob }},
+				valueFontColor: "yellow",
+				titleFontColor: "yellow",
+				min: 0,
+				max: 100,
+				title: "Botometer by OSoMe",
+				label: "%"
+			});
+			
+		});
+    </script>
+
+    <body>
+        <img src="{{ url_for('static', filename='UDD_logo.png')}}" width="200"/>
+        <h1>SpotBot</h1>
+        <p> Enter TWITTER Screen Name (@johnDoe): </p>
+            <form action='/' method="POST">
+                <input name="user" value= {{ user }}>
+                <input type="submit">
+            </form>
+
+        <hr>
+        <p>Probability of {{ user }} (id: {{ id }}) be a "Social Bot" is {{ prob }}%</p>
+        <div id="g1"></div>
+        {% if prob>50 %}
+            <img src="{{ url_for('static', filename='robotwitter.png')}}" width="220"/>
+        {% else %}
+            <img src="{{ url_for('static', filename='humantwitter.png')}}" width="175"/>
+        {% endif %}
+        
+         <p> Retrieve User Data: </p>
+         <form action='/metrics' method="POST">
+                <input name="user" value= {{ user }}>
+                <input type="submit">
+         </form>
+        <hr>
+        <p> @2019 UDD - MDS18 - PD</p>
+    </body>
+</html>
