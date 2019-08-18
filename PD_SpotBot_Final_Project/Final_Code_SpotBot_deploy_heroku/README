@@ -1,0 +1,14 @@
+READE_ME
+
+La entrega es composta de un “Kit de ventas”:
+
+- Tech_Comercial_Sheet.pdf
+      Es el equivalente a un informe con informaciones técnicas y comerciales adicionales a la presentación #2. 
+- Pitch_Press-comprimido.pdf
+      Es la presentación de la entrega #2, la cual es el suporte al equipo de ventas (uso interno o presentaciones a clientes potenciales)
+- Brochura-Comprimido.pdf
+      Es un folleto publicitário (“flyer”) frente-verso el cual contiene un mensaje con el fin de promocionar nuestro producto en eventos, locales, etc. 
+- Protótipo funcional para evaluación:
+      https://uddspotbot.herokuapp.com
+
+NOTA: Los codigo son todos abiertos, desarrollados con herramientas abiertas, tales como Python y Flask. Pero, el codigo utiliza APIs de terceros (bolometer y tweepy), las cuales son sujetas a normas de uso proprias y para utilizarlas deben ser obtenidas llaves directamente en sus respectivos websites.
