@@ -1,3 +1,3 @@
-READE_ME
+SpotBot Version 1
 
 Los codigo son todos abiertos, desarrollados con herramientas abiertas, tales como Python y Flask. Pero, el codigo utiliza APIs de terceros (bolometer y tweepy), las cuales son sujetas a normas de uso proprias y para utilizarlas deben ser obtenidas llaves directamente en sus respectivos websites.
