@@ -1,0 +1,37 @@
+Entrega Inteligencia Artificial aplicada
+
+
+La entrega contenida en esta carpeta se compone de:
+
+
+01_ Presentación PPT (Ver presentación en Drive para no desconfigurar)
+
+02_Presentación PDF (Descargar en caso de visualización local)
+
+03_Video 1 del Chatbot en funcionamiento
+
+04_Video 2 del Chatbot en funcionamiento
+
+05-11_Imagenes del Chatbot en funcionamiento 
+
+12_skill-Recomender.json _ Archivo Json con la implementación del BOT
+
+13_MDS-IAA_Product_Recomender_Final _ Jupyter notebook con el modelo de recomendación
+
+14_MDS-IAA-Product-Recomender-Final.html _ Visualización del notebook con el modelo
+
+Recomm-movies-may-19.csv _ Archivo CSV output del modelo de recomendación
+
+Recomm-series-may-19.csv _ Archivo CSV output del modelo de recomendación
+
+
+
+Slds :)
+
+
+Candidatos a Master en ciencia de datos:
+
+Marcelo Rovai
+Manuel Sacasa
+
+Universidad del Desarrollo UDD_2019
