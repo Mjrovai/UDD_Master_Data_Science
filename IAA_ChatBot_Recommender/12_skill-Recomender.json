@@ -1,0 +1,845 @@
+{
+  "name": "Recomender",
+  "intents": [
+    {
+      "intent": "reproval",
+      "examples": [
+        {
+          "text": "creo ue puedes hacerlo mejor"
+        },
+        {
+          "text": "sigue buscando"
+        },
+        {
+          "text": "otra recomendacion"
+        },
+        {
+          "text": "quiero otra"
+        },
+        {
+          "text": "tienes otra opcion"
+        },
+        {
+          "text": "no estoy de acuerdo"
+        },
+        {
+          "text": "No me gusta"
+        },
+        {
+          "text": "no me gusto"
+        },
+        {
+          "text": "quiero otra recomendacion"
+        },
+        {
+          "text": "quiero otra opcion"
+        },
+        {
+          "text": "no"
+        },
+        {
+          "text": "por favor sigue buscando"
+        },
+        {
+          "text": "mas opciones"
+        },
+        {
+          "text": "quiero otras opciones"
+        }
+      ],
+      "description": "not ok with de recomendation"
+    },
+    {
+      "intent": "film_recomendation",
+      "examples": [
+        {
+          "text": "¿Qué película me recomiendas?"
+        },
+        {
+          "text": "¿Qué película tienes para mi?"
+        },
+        {
+          "text": "me gustaría ver una película"
+        },
+        {
+          "text": "¿Qué películas hay?"
+        },
+        {
+          "text": "¿Qué películas tienes?"
+        },
+        {
+          "text": "¿Hay películas?"
+        },
+        {
+          "text": "¿Qué película podría ver?"
+        }
+      ],
+      "description": "a film recomendation for an user"
+    },
+    {
+      "intent": "new_film",
+      "examples": [
+        {
+          "text": "nueva"
+        },
+        {
+          "text": "Me tinca una película nueva"
+        },
+        {
+          "text": "si una nueva"
+        },
+        {
+          "text": "una nueva"
+        },
+        {
+          "text": "prefiero una nueva"
+        },
+        {
+          "text": "creoq ue quiero una nueva"
+        }
+      ],
+      "description": "recomendación de película nueva"
+    },
+    {
+      "intent": "serie_recomendation",
+      "examples": [
+        {
+          "text": "quiero ver una serie"
+        },
+        {
+          "text": "¿Tienes una serie para mi?"
+        },
+        {
+          "text": "Me gustaría ver una serie"
+        },
+        {
+          "text": "¿Qué serie podría ver?"
+        },
+        {
+          "text": "¿Qué serie tienes?"
+        },
+        {
+          "text": "‚Qué serie me recomiendas?"
+        },
+        {
+          "text": "¿Qué serie puedo ver?"
+        }
+      ],
+      "description": "a TV serie recomendation"
+    },
+    {
+      "intent": "ID_Client",
+      "examples": [],
+      "description": "Client or user number"
+    },
+    {
+      "intent": "aproval",
+      "examples": [
+        {
+          "text": "si, me gusto"
+        },
+        {
+          "text": "me parece ok"
+        },
+        {
+          "text": "la revisare"
+        },
+        {
+          "text": "si, estoy de acuerdo"
+        },
+        {
+          "text": "ok la veré"
+        },
+        {
+          "text": "Ok con la reocmendación"
+        },
+        {
+          "text": "me gusta"
+        },
+        {
+          "text": "esta bien"
+        }
+      ],
+      "description": "be ok with the recomendation"
+    }
+  ],
+  "entities": [
+    {
+      "entity": "serie",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "serie",
+          "synonyms": [
+            "capítulo",
+            "capítulo estreno",
+            "temporada",
+            "spinoff"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "new_film",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "película nueva",
+          "synonyms": [
+            "nueva",
+            "estreno",
+            "recien salida",
+            "estrenada",
+            "última"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "film",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "película",
+          "synonyms": [
+            "precuela",
+            "secuela",
+            "filme",
+            "estreno"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-number",
+      "values": []
+    }
+  ],
+  "language": "en",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-09-20"
+    }
+  },
+  "description": "",
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Recomendation_Nº2",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Te recomiendo ver $serie_2 . Ahora creo que he acertado :) ....mmm..o no?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1558924321731",
+      "metadata": {},
+      "conditions": "$serie_2",
+      "dialog_node": "node_5_1558924444102"
+    },
+    {
+      "type": "standard",
+      "title": "Recomendation_Nº2",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Te recomiendo ver $film_2 . Ahora creo que he acertado :) ....mmm..o no?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1558580877949",
+      "metadata": {},
+      "conditions": "$film_2",
+      "dialog_node": "node_2_1558581546373"
+    },
+    {
+      "type": "standard",
+      "title": "Not Ok_ no more recom",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "No tengo más recomendaciones...creo que es momento del zapping :) buena suerte_CIAO!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_13_1558976608232",
+      "metadata": {},
+      "conditions": "#reproval",
+      "dialog_node": "node_1_1558999485906",
+      "previous_sibling": "node_14_1558976608232"
+    },
+    {
+      "type": "standard",
+      "title": "Ok recomendation",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Disfruta y no te olvides de evaluar los films! me ayudas a dar mejores recomendaciones! slds!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_13_1558976608232",
+      "metadata": {},
+      "conditions": "#aproval",
+      "dialog_node": "node_14_1558976608232"
+    },
+    {
+      "type": "standard",
+      "title": "Not Ok_ no more recom",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "No tengo más recomendaciones...creo que es momento del zapping :) buena suerte_CIAO!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1558926686329",
+      "metadata": {},
+      "conditions": "#reproval",
+      "dialog_node": "node_10_1558927393226",
+      "previous_sibling": "node_9_1558926686329"
+    },
+    {
+      "type": "standard",
+      "title": "Ok recomendation final",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Disfruta y no te olvides de evaluar las series! me ayudas a dar mejores recomendaciones! slds!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1558926686329",
+      "metadata": {},
+      "conditions": "#aproval",
+      "dialog_node": "node_9_1558926686329"
+    },
+    {
+      "type": "standard",
+      "title": "Not ok recomendation",
+      "output": {
+        "text": {
+          "values": [
+            "Estamos buscando nuevas recomendaciones de películas..."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1558498977690",
+      "actions": [
+        {
+          "name": "/sacasamanuel%40gmail.com_dev/actions/Bot_data_2",
+          "type": "server",
+          "parameters": {
+            "id": "@sys-number"
+          },
+          "credentials": "$creds_cf",
+          "result_variable": "film_2"
+        }
+      ],
+      "context": {
+        "creds_cf": {
+          "user": "2bdf34bf-22ab-4656-b13b-d49b26395cbc",
+          "password": "QavschtyCMB9Z8A76WJUVZEtNKIpmb3CjtOvRzv7ncQipUOIo0U8Bs5SQbB3xg7z"
+        }
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "#reproval",
+      "dialog_node": "node_1_1558580877949",
+      "previous_sibling": "node_2_1558500663611"
+    },
+    {
+      "type": "standard",
+      "title": "Ok recomendation",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Disfruta y no te olvides de evaluar los films! me ayudas a dar mejores recomendaciones! slds!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1558498977690",
+      "metadata": {},
+      "conditions": "#aproval",
+      "dialog_node": "node_2_1558500663611"
+    },
+    {
+      "type": "standard",
+      "title": "Not ok recomendation",
+      "output": {
+        "text": {
+          "values": [
+            "Estoy buscando nuevas recomendaciones de series..."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_2_1558923948426",
+      "actions": [
+        {
+          "name": "/sacasamanuel%40gmail.com_dev/actions/Bot_serie_2",
+          "type": "server",
+          "parameters": {
+            "id": "@sys-number"
+          },
+          "credentials": "$creds_cf",
+          "result_variable": "serie_2"
+        }
+      ],
+      "context": {
+        "creds_cf": {
+          "user": "2bdf34bf-22ab-4656-b13b-d49b26395cbc",
+          "password": "QavschtyCMB9Z8A76WJUVZEtNKIpmb3CjtOvRzv7ncQipUOIo0U8Bs5SQbB3xg7z"
+        }
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "#reproval",
+      "dialog_node": "node_4_1558924321731",
+      "previous_sibling": "node_3_1558924109005"
+    },
+    {
+      "type": "standard",
+      "title": "Ok recomendation",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Disfruta y no te olvides de evaluar las series! me ayudas a dar mejores recomendaciones! slds!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1558923948426",
+      "metadata": {},
+      "conditions": "#aproval",
+      "dialog_node": "node_3_1558924109005"
+    },
+    {
+      "type": "standard",
+      "title": "Serie_searching",
+      "output": {
+        "text": {
+          "values": [
+            "Estoy buscando las mejores recomendaciones de series..."
+          ]
+        }
+      },
+      "parent": "node_2_1557981360575",
+      "actions": [
+        {
+          "name": "/sacasamanuel%40gmail.com_dev/actions/Bot_serie_1",
+          "type": "server",
+          "parameters": {
+            "id": "@sys-number"
+          },
+          "credentials": "$creds_cf",
+          "result_variable": "serie_1"
+        }
+      ],
+      "context": {},
+      "metadata": {},
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "@sys-number",
+      "dialog_node": "node_1_1558894356509"
+    },
+    {
+      "type": "standard",
+      "title": "Recomendation_Nº3",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Te recomiendo ver $serie_3 . No tengo más opciones por el momento...pude ayudar en algo?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1558926686326",
+      "metadata": {},
+      "conditions": "$serie_3",
+      "dialog_node": "node_8_1558926686329"
+    },
+    {
+      "type": "standard",
+      "title": "Not ok recomendation final",
+      "output": {
+        "text": {
+          "values": [
+            "Estoy buscando nuevas recomendaciones de películas..."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_2_1558581546373",
+      "actions": [
+        {
+          "name": "/sacasamanuel%40gmail.com_dev/actions/Bot_data_3",
+          "type": "server",
+          "parameters": {
+            "id": "@sys-number"
+          },
+          "credentials": "$creds_cf",
+          "result_variable": "film_3"
+        }
+      ],
+      "context": {
+        "creds_cf": {
+          "user": "2bdf34bf-22ab-4656-b13b-d49b26395cbc",
+          "password": "QavschtyCMB9Z8A76WJUVZEtNKIpmb3CjtOvRzv7ncQipUOIo0U8Bs5SQbB3xg7z"
+        }
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "#reproval",
+      "dialog_node": "node_12_1558976608230",
+      "previous_sibling": "node_11_1558976253644"
+    },
+    {
+      "type": "standard",
+      "title": "Ok recomendation",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Disfruta y no te olvides de evaluar los films! me ayudas a dar mejores recomendaciones! slds!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1558581546373",
+      "metadata": {},
+      "conditions": "#aproval",
+      "dialog_node": "node_11_1558976253644"
+    },
+    {
+      "type": "standard",
+      "title": "Recomendation_Nº1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Te recomiendo ver $film_1 . Todo OK o sigo buscando?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1557986155629",
+      "metadata": {},
+      "conditions": "$film_1",
+      "dialog_node": "node_1_1558498977690"
+    },
+    {
+      "type": "standard",
+      "title": "Recomendation_Nº3",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Te recomiendo ver $film_3 . No tengo más opciones por el momento...pude ayudar en algo?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_12_1558976608230",
+      "metadata": {},
+      "conditions": "$film_3",
+      "dialog_node": "node_13_1558976608232"
+    },
+    {
+      "type": "standard",
+      "title": "Recomendation_Nº1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Te recomiendo ver $serie_1 . Todo OK o sigo buscando?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1558894356509",
+      "metadata": {},
+      "conditions": "$serie_1",
+      "dialog_node": "node_2_1558923948426"
+    },
+    {
+      "type": "standard",
+      "title": "Not ok recomendation final",
+      "output": {
+        "text": {
+          "values": [
+            "Estoy buscando nuevas recomendaciones de series..."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_5_1558924444102",
+      "actions": [
+        {
+          "name": "/sacasamanuel%40gmail.com_dev/actions/Bot_serie_3",
+          "type": "server",
+          "parameters": {
+            "id": "@sys-number"
+          },
+          "credentials": "$creds_cf",
+          "result_variable": "serie_3"
+        }
+      ],
+      "context": {
+        "creds_cf": {
+          "user": "2bdf34bf-22ab-4656-b13b-d49b26395cbc",
+          "password": "QavschtyCMB9Z8A76WJUVZEtNKIpmb3CjtOvRzv7ncQipUOIo0U8Bs5SQbB3xg7z"
+        }
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "#reproval",
+      "dialog_node": "node_7_1558926686326",
+      "previous_sibling": "node_6_1558926024384"
+    },
+    {
+      "type": "standard",
+      "title": "Ok recomendation final",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Disfruta y no te olvides de evaluar las series! me ayudas a dar mejores recomendaciones! slds!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1558924444102",
+      "metadata": {},
+      "conditions": "#aproval",
+      "dialog_node": "node_6_1558926024384"
+    },
+    {
+      "type": "standard",
+      "title": "Film_searching",
+      "output": {
+        "text": {
+          "values": [
+            "Estamos buscando las mejores recomendaciones de películas..."
+          ]
+        }
+      },
+      "parent": "node_1_1557981203583",
+      "actions": [
+        {
+          "name": "/sacasamanuel%40gmail.com_dev/actions/Bot_data_1",
+          "type": "server",
+          "parameters": {
+            "id": "@sys-number"
+          },
+          "credentials": "$creds_cf",
+          "result_variable": "film_1"
+        }
+      ],
+      "context": {},
+      "metadata": {},
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "@sys-number",
+      "dialog_node": "node_3_1557986155629"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "disculpa no entendí...puedes volver a escribir?"
+              },
+              {
+                "text": "puedes repetirme lo último...disculpa pero no siempre entiendo a la primera :)"
+              },
+              {
+                "text": "No entendí...disculpa puedes repetirme lo último? Soy sólo un bot :)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_2_1557981360575"
+    },
+    {
+      "type": "standard",
+      "title": "Id_client for Film",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Tengo películas excelentes! cual es tu Id?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "creds_cf": {
+          "user": "2bdf34bf-22ab-4656-b13b-d49b26395cbc",
+          "password": "QavschtyCMB9Z8A76WJUVZEtNKIpmb3CjtOvRzv7ncQipUOIo0U8Bs5SQbB3xg7z"
+        }
+      },
+      "metadata": {},
+      "conditions": "#film_recomendation",
+      "dialog_node": "node_1_1557981203583",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Id_client for Serie",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Tengo series excelentes! cual es tu Id?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "creds_cf": {
+          "user": "2bdf34bf-22ab-4656-b13b-d49b26395cbc",
+          "password": "QavschtyCMB9Z8A76WJUVZEtNKIpmb3CjtOvRzv7ncQipUOIo0U8Bs5SQbB3xg7z"
+        }
+      },
+      "metadata": {},
+      "conditions": "#serie_recomendation",
+      "dialog_node": "node_2_1557981360575",
+      "previous_sibling": "node_1_1557981203583"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hola  ¿Qué te gustaría ver?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "workspace_id": "33539b4f-2adb-4e50-9152-7359332f3040",
+  "counterexamples": [],
+  "system_settings": {
+    "tooling": {
+      "store_generic_responses": true
+    }
+  },
+  "learning_opt_out": false,
+  "status": "Available"
+}
