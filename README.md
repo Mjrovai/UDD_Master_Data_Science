@@ -1,2 +1,2 @@
-# UDD - Projects for Master in Data Science 
+# Most important works developed during Master in Data Science program [MDS18]
 <img src='DS-UDD.png'>
